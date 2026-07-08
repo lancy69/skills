@@ -1,0 +1,4 @@
+interface:
+  display_name: "Designer"
+  short_description: "Generate DESIGN.md from any artifact"
+  default_prompt: "Use $designer to turn the provided text, image, or code into a reusable DESIGN.md."
