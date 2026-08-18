@@ -13,3 +13,7 @@ into procedural instructions and a validation workflow for an Agent Skill on
 2026-08-18. Many examples, citations, implementation suggestions, and historical
 explanations from the original were omitted. This adaptation is licensed under
 CC BY-SA 4.0. No endorsement by the original authors or contributors is implied.
+
+`references/cli-guidelines.md` is an unmodified copy of the source Markdown at
+the revision identified above. It is included under the original CC BY-SA 4.0
+license.

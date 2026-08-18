@@ -1,6 +1,12 @@
 ---
 name: cli-guidelines
-description: Use this skill when designing, implementing, or reviewing a command-line interface for human-friendly behavior and Unix composability, including help text, output, errors, arguments, flags, prompts, destructive operations, configuration, environment variables, and automation-safe behavior. Do not use it for full-screen terminal UIs or shell-language syntax alone.
+description: >
+  Build command-line interfaces that are delightful for humans and dependable in scripts.
+  Use this skill when designing, implementing, or reviewing a command-line interface for
+  human-friendly behavior and Unix composability, including help text, output, errors,
+  arguments, flags, prompts, destructive operations, configuration, environment variables,
+  and automation-safe behavior. Do not use it for full-screen terminal UIs or shell-language
+  syntax alone.
 license: CC-BY-SA-4.0; see LICENSE.txt
 ---
 
@@ -263,6 +269,15 @@ Apply this skill to conventional command-line programs and their text interfaces
 Do not use it as the primary guide for full-screen terminal applications such as
 editors, dashboards, or games. Do not let it replace language-specific parser,
 security, accessibility, packaging, or platform documentation.
+
+## Consult the original guide when needed
+
+Use this distilled workflow by default. Read
+[references/cli-guidelines.md](references/cli-guidelines.md) when the task needs
+the original wording, complete examples, citations, historical rationale, or a
+guideline detail not resolved by this file. The reference is a verbatim snapshot,
+so distinguish its original recommendations from any later project-specific
+decision or implementation.
 
 ## Attribution
 
