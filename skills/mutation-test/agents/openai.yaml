@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mutation Test"
+  short_description: "Test test-suite strength with code mutations"
+  default_prompt: "Use $mutation-test to run a targeted mutation test and report actionable surviving mutants."

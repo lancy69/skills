@@ -1,0 +1,4 @@
+interface:
+  display_name: "CRAP"
+  short_description: "Find risky code using complexity and coverage"
+  default_prompt: "Use $crap to evaluate this codebase with the CRAP metric and rank the riskiest functions."
