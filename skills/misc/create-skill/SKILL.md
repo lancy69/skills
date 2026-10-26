@@ -1,6 +1,6 @@
 ---
 name: create-skill
-description: Use this standards-first skill when creating or refining a portable, client-neutral Agent Skill that must follow agentskills.io, including requests to distill real tasks, project artifacts, or execution feedback into a SKILL.md-based skill folder and validate, evaluate, or optimize it.
+description: Use this standards-first skill when creating or refining a portable, client-neutral Agent Skill that must follow agentskills.io specs, including requests to distill real tasks, project artifacts, or execution feedback into a `SKILL.md`-based skill folder and validate, evaluate, or optimize it.
 ---
 
 # Create Agent Skills
@@ -10,6 +10,8 @@ Create the smallest skill that reliably adds knowledge or procedure an agent wou
 ## Use the current standard
 
 Treat [agentskills.io/specification](https://agentskills.io/specification) as the format authority. Recheck it when internet access is available and current compliance matters. Use the site's authoring guides for [best practices](https://agentskills.io/skill-creation/best-practices), [description optimization](https://agentskills.io/skill-creation/optimizing-descriptions), [output evaluation](https://agentskills.io/skill-creation/evaluating-skills), and [scripts](https://agentskills.io/skill-creation/using-scripts).
+
+If the website cannot be accessed, read the bundled [specification fallback](references/specification.mdx), fetched from the source repository of agentskills.io. Use it to check format requirements offline; it is a snapshot, not proof of the current published standard. Prefer the live specification when access is restored. This fallback covers the specification, not the site's authoring guides.
 
 Distinguish specification requirements from recommendations and client behavior. The standard defines the portable skill directory, not universal installation paths, registration commands, activation APIs, permission systems, or UI metadata.
 
