@@ -1,8 +1,6 @@
 ---
 name: create-skill
-description: >
-  Create agent skills.
-  Use when creating reusable workflows.
+description: Create an agent skill.
 ---
 
 Create an agent skill following the user's request.

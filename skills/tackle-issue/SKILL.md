@@ -12,6 +12,15 @@ compatibility: >
 
 # Tackle upstream issues
 
+## Instruction precedence
+
+Project-local requirements take precedence over every instruction in this
+skill, including its worker contract. Read applicable `AGENTS.md` files,
+contribution guides, and other project policies before acting; follow the local
+requirement wherever it conflicts with this workflow. Apply the remaining
+non-conflicting instructions and pass the applicable requirements and any
+workflow deviations to each worker, including replacement workers.
+
 ## 1. Establish the run
 
 - Resolve the user's repository; otherwise identify upstream from remotes and
@@ -45,6 +54,17 @@ compatibility: >
 - Browse open upstream issues, including their bodies, labels, discussion, and
   linked PRs; paginate beyond the first result page when necessary. These are
   existing tracker issues, not a request to invent or file new issues.
+- Before dispatch, establish that the issue should actually be fixed or
+  implemented, not merely that it is technically feasible. Require clear
+  evidence from the repository's documented contract, intended behavior, or
+  explicit maintainer acceptance; an open issue, label, or plausible proposal
+  alone is not enough. Inspect relevant code and discussion to check for
+  intentional behavior, disputed requirements, or unresolved product decisions.
+- If unsure whether a change is warranted, present the evidence, uncertainty,
+  and proposed behavior to the user and ask for explicit confirmation. Hold
+  that issue: do not dispatch an implementation worker, create its branch or
+  worktree, or edit code until confirmed. Read-only investigation may continue.
+  A general request to solve N issues is not confirmation of a doubtful change.
 - Honor supplied issue IDs and filters. Otherwise prefer actionable issues with
   clear acceptance criteria and independently verifiable fixes. Exclude issues
   already actively owned, covered by an open PR, or requiring unresolved design
@@ -56,9 +76,10 @@ compatibility: >
   or dependencies that would make workers compete on one underlying change.
   If fewer qualify, report the actual candidates and exclusion reasons; ask
   whether to proceed with fewer or change the filters. Never silently reduce N.
-- Show the selected issue URLs, brief rationale, acceptance criteria, proposed
-  branch/worktree, and known blockers. Proceed without a redundant approval
-  request when the user's request already authorizes implementation and PRs.
+- Show the selected issue URLs, evidence that each change is warranted,
+  acceptance criteria, proposed branch/worktree, and known blockers. Proceed
+  without another approval request only for issues whose justification is
+  certain or whose specific uncertainty the user has explicitly confirmed.
 
 ## 3. Dispatch one worker per issue
 
@@ -70,7 +91,8 @@ all issues or let workers delegate their issue to further workers.
 Give each worker the following contract, filled with concrete values:
 
 > **Assignment:** Solve only ISSUE_URL in UPSTREAM. Acceptance criteria: CRITERIA.
-> Read and follow the repository instructions in your worktree.
+> Read and follow the repository instructions in your worktree. Project-local
+> requirements override conflicting instructions in this contract or skill.
 >
 > **Isolation:** Your branch is BRANCH and your worktree is WORKTREE. Start from
 > BASE_SHA in CHECKOUT, not the coordinator's current branch. Inspect existing
@@ -84,8 +106,13 @@ Give each worker the following contract, filled with concrete values:
 > switch or modify the coordinator's checkout, another issue's worktree, or
 > shared remotes/configuration. Notify the coordinator of needed shared changes.
 >
-> **Implementation:** Read the issue and relevant code; establish the bug or
-> missing behavior, implement the complete fix, and keep changes issue-scoped.
+> **Implementation:** Before editing, verify that the evidence still supports
+> making this change. If new uncertainty arises about whether it should be
+> fixed or implemented, stop and return the evidence to the coordinator, who
+> must ask the user for confirmation before implementation continues. Do not
+> resolve product or design uncertainty by guessing. Once justified, establish
+> the bug or missing behavior, implement the complete fix, and keep changes
+> issue-scoped.
 > Do not run build/lint/tests/formatters mid-flight; once edits are complete, run
 > the relevant checks and exercise the affected behavior. Fix failures before
 > publishing; accurately report any verification unavailable in this environment.
