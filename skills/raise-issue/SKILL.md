@@ -25,7 +25,9 @@ description: >
      user explicitly authorizes proceeding despite it.
 
 3. **Prepare the report.** Follow the repository's template and requirements.
-   Use a concise, descriptive title. For bugs, include reproduction steps,
+   Use a concise, descriptive title. Write issues and comments in the reporter's
+   first-person voice: “I encountered an issue,” not “the reporter encountered
+   an issue” or “the reporter said.” For bugs, include reproduction steps,
    expected and actual behavior, and relevant versions and logs. For feature
    requests, describe the use case and desired behavior. Use supplied or
    observed evidence; separate observations from hypotheses. Never invent
